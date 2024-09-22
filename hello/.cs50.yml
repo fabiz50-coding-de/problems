@@ -1,6 +1,14 @@
 check50:
-   checks:
-     hello world:
-       - run: python3 hello.py # run python3 hello.py
-         stdout: Hello, world! # expect Hello, world! in stdout
-         exit: 0 # expect program to exit with exitcode 0
+  files: &check50_files
+    - !exclude "*"
+    - !include "*.py"
+    - !require hello.py
+
+  checks:
+    hello world:
+      - run: python3 hello.py # run python3 hello.py
+        stdout: Hello, world! # expect Hello, world! in stdout
+        exit: 0 # expect program to exit with exitcode 0
+
+submit50:
+  files: *check50_files
