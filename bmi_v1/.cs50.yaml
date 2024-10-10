@@ -1,0 +1,11 @@
+check50:
+   checks:
+      BMI Berechnung :
+        - run: python3 bmi_v1.py
+          stdin: |
+            1.66
+            60
+          #stdout: "BMI: 21.77\n"
+          stdout: 21.77
+          exit: 0
+      

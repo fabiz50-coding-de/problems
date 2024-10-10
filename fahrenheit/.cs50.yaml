@@ -1,0 +1,22 @@
+check50:
+  files:
+    - !exclude "*"
+    - !include "*.py"
+    - !require "fahrenheit.py"
+
+  checks:
+    Temperatur 32C:
+      - run: python3 fahrenheit.py
+        stdin: 32
+        stdout: 89.6
+        exit: 0
+    Temperatur 0C:
+      - run: python3 fahrenheit.py
+        stdin: 0
+        stdout: 32.0
+        exit: 0
+    Temperatur 25C:
+      - run: python3 fahrenheit.py
+        stdin: 25
+        stdout: 77.0
+        exit: 0

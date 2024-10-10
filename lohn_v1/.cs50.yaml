@@ -1,0 +1,20 @@
+check50:
+  files:
+    - !exclude "*"
+    - !include "*.py"
+    - !require "lohn_v1.py"
+
+  checks:
+    Berechnungen Bruttolohn :
+      - run: python3 lohn_v1.py
+        stdin: |
+          35
+          2.75
+        stdout: 96.25
+        exit: 0
+      - run: python3 lohn_v1.py
+        stdin: |
+          31
+          3.125
+        stdout: 96.88
+        exit: 0

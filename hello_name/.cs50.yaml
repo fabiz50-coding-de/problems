@@ -1,0 +1,22 @@
+check50: 
+  files:
+    - !exclude "*"
+    - !include "*.py"
+    - !require "hello_name.py"
+
+  checks:
+    single name:
+      - run: python3 hello_name.py
+        stdin: "peter"
+        stdout: "Hello, Peter !"
+        exit: 0
+    full name:
+      - run: python3 hello_name.py
+        stdin: "james BOND"
+        stdout: "Hello, James Bond !"
+        exit: 0  
+    no name shows hello world:
+      - run: python3 hello_name.py
+        stdin: ""
+        stdout: "Hello, world!"
+        exit: 0
