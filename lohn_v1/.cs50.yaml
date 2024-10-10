@@ -16,5 +16,5 @@ check50:
         stdin: |
           31
           3.125
-        stdout: 96.88
+        stdout: 96.875
         exit: 0
